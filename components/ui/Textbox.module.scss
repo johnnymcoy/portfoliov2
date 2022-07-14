@@ -1,0 +1,32 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+}
+.label{
+    align-items: center;
+    display: inline-flex;
+}
+.input{
+    border: none;
+    appearance: none;
+    border-radius: 0;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    font-size: 11px;
+    line-height: 2;
+    height: 21px;
+    background-color: #fff;
+    box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    box-sizing: border-box;
+    padding: 3px 4px;
+    max-width: 100%;
+    max-height: 40vh;
+    &:focus{
+        outline: none;
+    }
+    &:disabled{
+        background-color: silver;
+        line-height: 2;
+    }
+}

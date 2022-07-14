@@ -53,7 +53,7 @@
 }
 
 .tasks{
-    width: 80%;
+    width: 100%;
 }
 
 .tray{
@@ -75,6 +75,9 @@
 }
 
 .trayClock{
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
     font-family: "MS Sans Serif", "Segoe UI", sans-serif;
     font-size: 12px;
     width: 80px;

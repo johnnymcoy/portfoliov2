@@ -13,6 +13,10 @@
     // width: 200px;
     resize: both;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .windowBorder{

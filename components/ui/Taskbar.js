@@ -18,7 +18,6 @@ function Taskbar(){
 
     const time = new Date().getTime();
     const formatedTime = new Intl.DateTimeFormat('en-AU',options).format(time);
-    console.log(time)
    return(
     <footer className={CSS.footer}>
         <Button className={CSS.startButton}>
@@ -31,7 +30,6 @@ function Taskbar(){
         <div className={CSS.tray}>
             <div className={CSS.trayIcons}></div>
             <div className={CSS.trayClock}>{formatedTime}</div>
-
         </div>
     </footer>
 

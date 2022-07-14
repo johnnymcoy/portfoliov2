@@ -3,6 +3,7 @@
 // CSS Styles
 import { useEffect, useState } from "react";
 import CSS from "./DesktopShortcut.module.scss";
+import NextImage from 'next/image'
 
 function DesktopShortcut(props){
     const [selected, setSelected] = useState(false);
@@ -23,9 +24,11 @@ function DesktopShortcut(props){
             onClick={clickHandler} 
             onDoubleClick={doubleClickHandler}
         >
-            <div className={CSS.icon}></div>
+            <div className={CSS.selectionEffect}></div>
+            <div className={CSS.icon}>
+                <img src={props.icon} width="32" height="32"/>
+            </div>
             <h1 className={CSS.name}>{props.name}</h1>
-           
        </div>
 
 );}

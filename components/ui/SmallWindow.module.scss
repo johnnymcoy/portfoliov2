@@ -1,12 +1,26 @@
 .window{
+    box-sizing: content-box;
     -webkit-font-smoothing: none;
     font-family: "Pixelated MS Sans Serif",Arial;
     font-size: 11px;
     background: silver;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
     padding: 3px;
-    margin: 32px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    pointer-events: all;
+    // margin: 32px;
     width: 250px;
+    z-index: 10;
+}
+
+.maximized{
+    box-sizing: border-box;
+    width: 100vw;
+    height: calc(100vh - 27px);
+    top: 0;
+    left: 0;
 }
 
 .titleBar{
@@ -39,6 +53,32 @@
         &:last-child{
             margin-left: 2px;
         }
+        
+    }
+    .minimize{
+        background-image: url("../../images/LayoutIcons/minimize.svg");
+        background-position: 4px 9px;
+        background-repeat: no-repeat;
+        }
+    .maximize{
+        background-image: url("../../images/LayoutIcons/maximize.svg");
+        background-position: 3px;
+        background-repeat: no-repeat;
+    }
+    .restore{
+        background-image: url("../../images/LayoutIcons/restore.svg");
+        background-position: 3px;
+        background-repeat: no-repeat;
+    }
+    .help{
+        background-image: url("../../images/LayoutIcons/maximize.svg");
+        background-position: 3px;
+        background-repeat: no-repeat;
+    }
+    .close{
+        background-image: url("../../images/LayoutIcons/close.svg");
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 

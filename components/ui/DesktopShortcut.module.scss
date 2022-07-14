@@ -1,21 +1,75 @@
 .shortcut{
     width: 75px;
     height: 75px;
-    background-color: red;
+    // background-color: red;
     z-index: 2;
+    pointer-events: all; 
     
 }
 
 .selected{
-    background-color: blue;
+    // background-color: blue;
+    .selectionEffect{
+        display:flex;
+        position: absolute;
+        outline: 1px dotted #000;
+        outline-offset: -4px;
+        // top: -50px;
+        // left: 0;
+        // right: 0;
+        margin: auto;
+        height: 75px;
+        width: 75px;
+        // mask-image: url("../../images/icons/shortcut-32x32.png");
+        // -webkit-mask-image: url("../../images/icons/shortcut-32x32.png");
+        background: blue;
+        opacity: 0.2;
+        z-index: -1;
+    }
+    .name{
+        background: blue;
+    }
 }
 
 .icon{
     width: 32px;
     height: 32px;
+    position: relative;
+    // text-align: center;
+    display: flex;
+    top: 0;
+    // left:0;
+    // right: 0;
+    margin: auto;
+    // vertical-align: bottom;
+    &::after{
+        content: url("../../images/icons/shortcut-32x32.png");
+        position: absolute;
+        left: 0px;
+        top: -15px;    
+    }
 }
+// .iconimg{
+// }
 
 .name{
+    margin: 0;
+    margin-top: 5px;
     background: var(--background-green);
     font-size: 8px;
+    font-family: sans-serif;
+    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-size: 8pt;
+    color: white;
+    font-weight: 100;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 13px;
+    text-align: center;
+    max-height: 26px;
 }

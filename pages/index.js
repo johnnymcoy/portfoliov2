@@ -40,18 +40,19 @@ function index(){
 
    return(
     <div className={CSS.body}>
+            {/* <Window>
+                {outputText}
+            </Window> */}
         <Desktop>
+            <SmallWindow>
+                Hello
+            </SmallWindow>
+
         </Desktop>
         {/* Hello it's me CURTY!! */}
         {/* <Card>
             {outputText}
         </Card> */}
-        {/* <Window>
-            {outputText}
-        </Window> */}
-        {/* <SmallWindow>
-
-        </SmallWindow> */}
         {/* <Card>
             <p>Hello i'm walking</p>
             Theme {theme ? "light" : "dark"} <br />
