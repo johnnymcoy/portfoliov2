@@ -1,0 +1,22 @@
+.body{
+    // font-family: "VT323";
+    // font-weight: 400;
+    font-size: var(--font-size);
+    // text-shadow: 0 0 5px #C8C8C8;
+    height: 100vh;
+    display: flex;
+}
+
+// .block{
+//     background: white;
+//     height: var(--font-size);
+//     width: var(--font-size);
+//     animation-name: blinking;
+//     animation-duration: 0.5s;
+//     animation-iteration-count: infinite;
+// }
+
+// @keyframes blinking {
+//     25% {background: white;}
+//     100% {background: transparent;}
+// }

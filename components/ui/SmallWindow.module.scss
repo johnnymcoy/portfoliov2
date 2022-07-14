@@ -1,0 +1,57 @@
+.window{
+    -webkit-font-smoothing: none;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    font-size: 11px;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    padding: 3px;
+    margin: 32px;
+    width: 250px;
+}
+
+.titleBar{
+    align-items: center;
+    background: linear-gradient(90deg,navy,#1084d0);
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 2px 3px 3px;
+}
+.titleBarText{
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-right: 24px;
+}
+.titleBarControls{
+    display: flex;
+    
+    .button{
+        display: block;
+        min-height: 14px;
+        min-width: 16px;
+        padding: 0;
+        &:active{
+            padding: 0;
+        }
+        &:focus{
+            outline: none;
+        }
+        &:last-child{
+            margin-left: 2px;
+        }
+    }
+}
+
+.cancelButton{
+    margin-left: 6px;
+}
+
+.windowBody{
+    margin: 8px;
+}
+
+.fieldRow{
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}

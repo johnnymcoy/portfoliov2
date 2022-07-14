@@ -1,0 +1,285 @@
+.window{
+    font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    vertical-align: baseline;
+    margin: 5px 5px 0 5px;
+    border: 1px solid #d6d6ce;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    font-family: "Tahoma", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-size: 11px;
+    // height: 200px;
+    // width: 200px;
+    resize: both;
+    overflow: hidden;
+}
+
+.windowBorder{
+    border: 1px solid #ffffff;
+    border-right-color: #848484;
+    border-bottom-color: #848484;
+    background: #d6d6ce;
+    padding: 2px;
+}
+
+.titleBar{
+    background: #08216b;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #08216b), color-stop(100%, #a5cef7));
+    background: -webkit-linear-gradient(left, #08216b 0%, #a5cef7 100%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.controlBox{
+    float: right;
+    margin: 2px;
+}
+
+.button3d{
+    display: block;
+    float: left;
+    border: 1px solid #ffffff;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: #d6d6ce;
+    height: 14px;
+    width: 16px;
+    color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+
+    span{
+        display: block;
+        border: 1px solid #848484;
+        border-top-width: 0;
+        border-left-width: 0;
+        font-size: 1px;
+        line-height: 13px;
+    }
+}
+//todo: can have better images
+.minimize{
+    background-image: url("../../images/icons/minimize.png");
+}
+.maximize{
+    background-image: url("../../images/icons/maximize.png");
+}
+.close{
+    background-image: url("../../images/icons/close.png");
+}
+// Blue bar at the top
+.title{
+    padding-left: 20px;
+    display: block;
+    background: url("../../images/icons/word.png") no-repeat left center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// File, edit, view etc.
+.menuBar{
+    line-height: 24px;
+    color: #333;
+    outline: 0;
+
+    a{
+        text-decoration: none;
+        display: inline-block;
+        padding: 0px 9px;
+    }
+    a:visited{
+        color: #333;
+        outline: 0;
+    }
+    a:hover{
+        color: #000;
+    }
+    span{
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+}
+.menuBar, .toolbar{
+    height: 24px;
+    overflow: hidden;
+    margin: 2px 1px;
+    padding: 0 7px;
+    background: url("../../images/icons/toolbar-grip.png") no-repeat 2px 6px;
+}
+// New doc, save doc, print, etc icons
+
+.toolbar{
+    background-color: #deded6;
+    border-radius: 1px;
+    a{
+        display: inline-block;
+        margin: 2px 0px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid transparent;
+        background: no-repeat center left;
+    }
+    a:hover{
+        background-color: #d6d6de;
+        border-color: #08216b;
+    }
+    a.text{
+        width:auto;
+        padding-left:22px;
+        padding-right:4px;
+        line-height: 18px;
+        background-position: 2px 1px;
+        em{
+            font-style: normal;
+            display: inline-block;
+            padding: 2px;
+            font-size: 10px;
+            line-height: 10px;
+            background: #d8e6ff;
+            border: 1px solid #c2d3f4;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+    }
+    .iNew{
+        background-image: url("../../images/icons/new.png");
+    }
+    .iOpen{
+        background-image: url("../../images/icons/open.png");
+    }
+    .iSave{
+        background-image: url("../../images/icons/save.png");
+    }
+    .iFacebook{
+        background-image: url("../../images/icons/share.png");
+    }
+    .iTwitter{
+        background-image: url("../../images/icons/tweet.png");
+    }
+    .iGithub{
+        background-image: url("../../images/icons/fork.png");
+    }
+}
+.floatLeft{
+    float: left;
+}
+.floatRight{
+    float: right;
+
+}
+.seperator{
+    display: inline-block;
+    width: 1px;
+    background: #a5a5a5;
+    margin: 1px 3px;
+    height: 20px;
+}
+.clear{
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.picker{
+    line-height: 18px;
+    height: 18px;
+    background: #fff;
+    margin: 4px 0 2px 0;
+    display: inline-block;
+    padding-left: 3px;
+    position: relative;
+    vertical-align: top;
+    .arrow{
+        display: block;
+        float:right;
+        width: 11px;
+        background: #deded6 url("../../images/icons/combo.png") no-repeat center center;
+        height:  16px;
+        margin: 1px 1px 1px 10px;
+    }
+}
+///// Inner page
+.content{
+    border: 1px solid #848484;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.contentBox{
+    border: 1px solid #424242;
+    border-right-color: #d6d6ce;
+    border-bottom-color: #d6d6ce;
+    background: #848484;
+    position: relative;
+}
+/// Ruler boder 
+.topRuler{
+    height: 24px;
+    background: #d6d6ce url(../../images/icons/ruler-mark.png) no-repeat left top;
+    padding-left: 25px;
+}
+.leftRuler{
+    position: relative;
+    width: 24px;
+    background: #d6d6ce;
+    float: left;
+    height: 455px; //todo: screensize
+}
+.ruler{
+    background: url(../../images/icons/horz-ruler.png);
+    height: 24px;
+    margin-left: 2px;
+    margin-right: 20px;
+}
+
+.documentScroller{
+    scrollbar-color: silver silver; //todo scrollbar 
+    overflow-y: scroll;
+    margin-left: 24px;
+    height: 455px; //todo: screensize
+    // height: 1000px;
+}
+.documentContent{
+
+}
+.documentContainer{
+    position: relative;
+    width: 770px;
+    margin: 5px auto 10px auto;
+    background:  #fff;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 0 0 #000;
+    min-height: 1000px;
+}
+@media only screen and (max-width: 767px){
+    .documentContainer {
+        width: 355px;
+    }
+}
+@media only screen and (min-width: 529px) and (max-width: 767px) {
+    .documentContainer{
+        width: 450px;
+    }
+}
+// Status bar {Document footer}
+.statusBar{
+    margin-top: 5px;
+    border-top: 1px solid #848484;
+    background: url(../../images/icons//status-bar-grip.png) no-repeat right bottom;
+}
+
+.statusBar .box{
+    display:inline-block;
+    border: 1px solid #e7dede;
+    padding: 0px 5px; 
+    margin-right: 5px;
+    &.disabled{
+        color: #848484;
+    }
+}

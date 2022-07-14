@@ -1,0 +1,74 @@
+.button{
+    text-rendering: auto;
+    // color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    -webkit-font-smoothing: none;
+    font-size: 11px;
+    padding: 2px 4px;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    min-height: 23px;
+    min-width: 75px;
+    padding: 0 12px;
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    // font-style: ;
+    // font-variant-ligatures: ;
+    // font-variant-caps: ;
+    // font-variant-numeric: ;
+    // font-variant-east-asian: ;
+    // font-weight: ;
+    // font-stretch: ;
+    // font-size: ;
+    // font-family: ;
+
+    // background: var(--surface);
+    // box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    // border-radius: 0;
+
+    // min-width: 75px;
+    // min-height: 23px;
+    // padding: 0 12px;
+    &:active{
+        box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+        padding: 2px 11px 0 13px;
+    }
+    // :not(:disabled){
+    //     box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    //     padding: 2px 11px 0 13px;
+    // }
+    &:focus{
+        outline: 1px dotted #000;
+        outline-offset: -4px;
+    }
+    &:disabled{
+        text-shadow: 1px 1px 0 #fff;
+        color: grey;
+        &:active{
+            box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+            padding: 0;
+    
+        }
+    }
+}

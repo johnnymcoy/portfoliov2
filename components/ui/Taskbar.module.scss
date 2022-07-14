@@ -1,0 +1,81 @@
+.footer{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #d6d6ce;
+    // border: 1px solid #ffffff;
+    // border-right-color: #848484;
+    // border-bottom-color: #848484;
+    height: 27px;
+    outline: 1px solid rgb(223, 223, 223);
+    border-top: 1px solid rgb(255, 255, 255);
+    background: rgb(192, 192, 192);
+    color: black;
+    z-index: 5;
+}
+
+.startButton{
+    box-sizing: border-box;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex-direction: row;
+    margin: 2px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    min-width: 58px;
+    &:active{
+        padding: 2px 4px;
+    }
+}
+
+.startImg{
+    background-image: url(../../images/icons/start.png);
+    // background-position: 1px 1px;
+    background-repeat: no-repeat;
+
+    height: 14px;
+    width: 16px;
+    // padding-left: 5px;
+}
+
+.divider{
+    border-left: 1px solid rgb(128, 128, 128);
+    border-right: 1px solid white;
+    margin: 2px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.tasks{
+    width: 80%;
+}
+
+.tray{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(128, 128, 128) white white rgb(128, 128, 128);
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    flex-direction: row;
+    line-height: 22px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.trayIcons{
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.trayClock{
+    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-size: 12px;
+    width: 80px;
+}

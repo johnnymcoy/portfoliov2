@@ -1,0 +1,21 @@
+.shortcut{
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    z-index: 2;
+    
+}
+
+.selected{
+    background-color: blue;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+}
+
+.name{
+    background: var(--background-green);
+    font-size: 8px;
+}
