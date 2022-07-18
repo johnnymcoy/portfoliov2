@@ -4,10 +4,13 @@ import "../public/static/clippy/build/clippy.css";
 import Script from "next/script";
 import Head from 'next/head'
 
+import {Provider} from "react-redux";
+import store from "../store/store";
+
 function MyApp({ Component, pageProps }) {
 
   return (
-  <>
+    <Provider store={store}>
     {/* <Head> */}
         {/* <meta content="width=device-width, initial-scale=1" name="viewport" /> */}
         <link rel="stylesheet" type="text/css" href="https://rawgit.com/smore-inc/clippy.js/master/build/clippy.css" media="all"></link>
@@ -20,9 +23,11 @@ function MyApp({ Component, pageProps }) {
                 clippy.load('Clippy', run);
         }}/>
     {/* </Head> */}
-    <MainNavigation /> 
+    {/* <MainNavigation menuOpen={bIsMenuOpen} />  */}
+    {/* <div className={bgBlurClass}> */}
     <Component {...pageProps}/>
-  </>);
-}
+    {/* </div> */}
+    </Provider>
+)}
 
 export default MyApp

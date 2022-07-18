@@ -55,6 +55,28 @@ body{
     // scrollbar-color: silver;
 }
 
+.wrapper{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    background: blue;
+}
+
+.wrapperBlur{
+    z-index: -1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(0.45rem);
+    opacity: .6;
+    transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
+}
+
 /*
 
 Scrollbar (only chrome & safari)

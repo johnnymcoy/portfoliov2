@@ -2,10 +2,10 @@ function run(agent) {
   agent.show();
 
   // add stuff here:
-  agent.speak("hmmm...");
+//   agent.speak("hmmm...");
 
 //   setTimeout(function() {
-    agent.speak("Looks like you're trying to use a microsoft product?");
+    agent.speak("Looks like you're trying to find the perfect employee?");
 
 //     setTimeout(function() {
 //       agent.play('Congratulate');

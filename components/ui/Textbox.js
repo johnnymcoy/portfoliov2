@@ -11,7 +11,7 @@ function Textbox(props){
     }
    return(
        <div className={CSS.wrapper}>
-           <label for="textbox" className={CSS.label}>Text</label>
+           <label htmlFor="textbox" className={CSS.label}>Text</label>
            {inputType}
        </div>
 

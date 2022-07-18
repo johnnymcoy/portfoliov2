@@ -12,9 +12,9 @@ function TestBox(props){
         new THREE.BoxGeometry(1,1,1),
         new THREE.MeshStandardMaterial({color: active ? 0xff0bb0: 0xff0000}),
     );
+
     box.receiveShadow = true;
     box.castShadow = active;
-
     function handleClick(){
         if(props.onClick)
         {
@@ -24,8 +24,8 @@ function TestBox(props){
     }
     console.log("Custom Box Render")
     return(
-        <primitive onClick={handleClick} object={box}>
-        </primitive>
+            <primitive onClick={handleClick} object={box}>
+            </primitive>
 
 );}
 

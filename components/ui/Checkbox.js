@@ -7,7 +7,7 @@ function Checkbox(){
    return(
        <div>
            <input id="input" type="checkbox" className={CSS.input} />
-           <label for="input"className={CSS.label} >
+           <label htmlFor="input"className={CSS.label} >
             This is a checkbox
            </label>
        </div>

@@ -1,0 +1,17 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+.off{
+    .overlay{
+        z-index: 100;
+        background: #2f2f2f;
+    }
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
