@@ -42,6 +42,8 @@ function ComputerScreen(props){
             textAlign: "center",
             alignItems: "center",
             opacity: hidden ? 0 : 1,
+            zIndexRange: [0, -10],
+            zIndex: 0,
             transform: `scale(${hidden ? 0.5 : 1})`
             }}
             center

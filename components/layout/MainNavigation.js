@@ -5,13 +5,34 @@ import { useDispatch } from "react-redux";
 
 import { menuActions } from "../../store/mainStore";
 
+
+
+function BurgerMenu(props){
+    const bMenuOpen = props.menuOpen;
+    // const menuButtonClasses = bMenuOpen ? `${CSS.menuBurger} ${CSS.closeMenuBurger}` : `${CSS.menuBurger} ${CSS.openMenuButton}`;
+    const svgRec1 = bMenuOpen ? `${CSS.rectangle1Close} ` : `${CSS.rectangle1} ` ;
+    const svgRec2 = bMenuOpen ? `${CSS.rectangle2Close} ` : `${CSS.rectangle2} ` ;
+    const svgRec3 = bMenuOpen ? `${CSS.rectangle3Close} ` : `${CSS.rectangle3} ` ;
+
+    return(    
+    <button className={CSS.menuBurger} onClick={props.onClick}>
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect className={svgRec1} width="100" height="10"></rect>
+            <rect className={svgRec2} y="35" width="100" height="10"></rect>
+            <rect className={svgRec3} y="70" width="100" height="10"></rect>
+        </svg>
+    </button>
+);}
+
 function MainNavigation(props){
     const dispatch = useDispatch();
+    // const bIsAuthenticated = useSelector(state => state.auth.bIsAuthenticated);
+    // const bSocialsVisible = useSelector(state => state.menu.bSocialsVisible);
+    // const bThemeChangeVisible = useSelector(state => state.menu.bThemeChangeVisible);
 
     const bMenuOpen = props.menuOpen;
     const mobileMenuClasses = bMenuOpen ? `${CSS.mobileNav} ${CSS.mobileNavOpen}` : `${CSS.mobileNav}`;
     const menuInnerClasses = bMenuOpen ? `${CSS.mobileInner} ${CSS.mobileInnerOpen}` : `${CSS.mobileInner}`;
-    const menuButtonClasses = bMenuOpen ? `${CSS.menuButton} ${CSS.closeMenuButton}` : `${CSS.menuButton} ${CSS.openMenuButton}`;
 
     const menuAction = bMenuOpen ? closeMenuButtonHandler : openMenuButtonHandler;
     function openMenuButtonHandler(){
@@ -20,63 +41,53 @@ function MainNavigation(props){
     function closeMenuButtonHandler(){
         dispatch(menuActions.closeMenu());
     }
-
     function menuButtonHandler(){
         dispatch(menuActions.closeMenu());
     }
-    //Burger
-    const svgRec1 = bMenuOpen ? `${CSS.rectangle1Close} ` : `${CSS.rectangle1} ` ;
-    const svgRec2 = bMenuOpen ? `${CSS.rectangle2Close} ` : `${CSS.rectangle2} ` ;
-    const svgRec3 = bMenuOpen ? `${CSS.rectangle3Close} ` : `${CSS.rectangle3} ` ;
-
 
    return(
        <nav className={CSS.nav}>
             <div className={mobileMenuClasses}>
                 <div className={menuInnerClasses}>
-                    <ul className={CSS.mobilePages}>
+                    {/* <ul className={CSS.mobilePages}> */}
                         <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
                             <Link className={CSS.link} href="/">
-                                <>
+                                <div className={CSS.linkInner}>
                                     <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                    <rect className={CSS.shape} height="64" width="288" />
+                                        <rect className={CSS.shape} height="64" width="288" />
                                     </svg>
-                                    Home
-                                </>
+                                    <h2 className={CSS.h2}>Home</h2>
+                                </div>
                             </Link>
                         </li>
                         <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
                             <Link className={CSS.link} href="/portfolio">
-                                <>
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                <rect className={CSS.shape} height="64" width="288" />
-                                </svg>
-                                Portfolio
-                                </>
-
+                                <div>
+                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                                    <rect className={CSS.shape} height="64" width="288" />
+                                    </svg>
+                                    <h2 className={CSS.h2}>Portfolio</h2>
+                                </div>
                             </Link>
                         </li>
                         <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
                             <Link className={CSS.link} href="/about-me">
-                            <>
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                <rect className={CSS.shape} height="64" width="288" />
-                                </svg>
-                                About Me
-                                </>
-
+                                <div>
+                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                                    <rect className={CSS.shape} height="64" width="288" />
+                                    </svg>
+                                    <h2 className={CSS.h2}>About Me</h2>
+                                </div>
                             </Link>
                         </li>
                         <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
                             <Link className={CSS.link} href="/contact">
-                            <>
- 
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                <rect className={CSS.shape} height="64" width="288" />
-                                </svg>  
-                                Contact
-                                </>
-
+                                <div>
+                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                                    <rect className={CSS.shape} height="64" width="288" />
+                                    </svg>  
+                                    <h2 className={CSS.h2}>Contact</h2>
+                                </div>
                             </Link>
                         </li>
                         {/* {bIsAuthenticated && <>
@@ -105,7 +116,7 @@ function MainNavigation(props){
                             </Link>
                         </li>
                         </>} */}
-                    </ul>
+                    {/* </ul> */}
                     {/* {bThemeChangeVisible&& 
                         <button onClick={themeChangeHandler}>Theme</button>
                     }
@@ -119,16 +130,9 @@ function MainNavigation(props){
                 </div>
             </div>
             <div className={CSS.mainNav}>
-                {/* <Link className={CSS.logo} href="/" onClick={menuButtonHandler}>Curtis Bucciol</Link> */}
-                <button className={menuButtonClasses} onClick={menuAction}>
-                    <svg viewBox="0 0 100 80" width="40" height="40">
-                        <rect className={svgRec1} width="100" height="10"></rect>
-                        <rect className={svgRec2} y="35" width="100" height="10"></rect>
-                        <rect className={svgRec3} y="70" width="100" height="10"></rect>
-                    </svg>
-                </button>
+                <Link className={CSS.logo} href="/" onClick={menuButtonHandler}>Curtis Bucciol</Link>
+                <BurgerMenu menuOpen={bMenuOpen} onClick={menuAction}/>
             </div>
-
        </nav>
 
 );}

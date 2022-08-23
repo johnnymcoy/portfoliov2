@@ -5,7 +5,7 @@ import Desktop from "../components/ui/Desktop";
 import SmallWindow from "../components/ui/SmallWindow";
 import Taskbar from "../components/ui/Taskbar";
 import Window from "../components/ui/Window";
-import CSS from "./index.module.scss";
+import CSS from "../styles/index.module.scss";
 
 import * as THREE from 'three'
 
@@ -18,6 +18,8 @@ import DeskLamp from "../components/3d/deskItems/DeskLamp";
 
 import MainNavigation from "../components/layout/MainNavigation";
 import {useSelector} from "react-redux";
+
+
 
 
 function index(){
@@ -80,9 +82,9 @@ function index(){
         <div className={bgBlurClass}>
         </div>
         {/* <Canvas className={CSS.canvas} shadows
-            camera={{fov: 55, position: [0,0,5]}}> */}
-                {/* <OrbitControls /> */}
-                {/* <Suspense fallback={null}>
+            camera={{fov: 55, position: [0,0,4]}}>
+                <OrbitControls />
+                <Suspense fallback={null}>
                     <ComputerMonitor3d />
                     <DeskLamp />
                 </Suspense>

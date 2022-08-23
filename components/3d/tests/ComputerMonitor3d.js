@@ -440,7 +440,7 @@ function ComputerMonitor3d(){
             <meshStandardMaterial color="orange" />
         </mesh> */}
         <mesh position={[0,-2.1,-1]} scale={[10,10,10]} rotation={[0,(Math.PI * -0.5),0]} receiveShadow castShadow>
-        <primitive object={floor} />
+            <primitive object={floor} />
         </mesh>
 
     
