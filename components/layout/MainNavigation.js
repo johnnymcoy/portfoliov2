@@ -9,7 +9,6 @@ import { menuActions } from "../../store/mainStore";
 
 function BurgerMenu(props){
     const bMenuOpen = props.menuOpen;
-    // const menuButtonClasses = bMenuOpen ? `${CSS.menuBurger} ${CSS.closeMenuBurger}` : `${CSS.menuBurger} ${CSS.openMenuButton}`;
     const svgRec1 = bMenuOpen ? `${CSS.rectangle1Close} ` : `${CSS.rectangle1} ` ;
     const svgRec2 = bMenuOpen ? `${CSS.rectangle2Close} ` : `${CSS.rectangle2} ` ;
     const svgRec3 = bMenuOpen ? `${CSS.rectangle3Close} ` : `${CSS.rectangle3} ` ;
@@ -46,94 +45,94 @@ function MainNavigation(props){
     }
 
    return(
-       <nav className={CSS.nav}>
-            <div className={mobileMenuClasses}>
-                <div className={menuInnerClasses}>
-                    {/* <ul className={CSS.mobilePages}> */}
-                        <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
-                            <Link className={CSS.link} href="/">
-                                <div className={CSS.linkInner}>
-                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                        <rect className={CSS.shape} height="64" width="288" />
-                                    </svg>
-                                    <h2 className={CSS.h2}>Home</h2>
-                                </div>
-                            </Link>
-                        </li>
-                        <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
-                            <Link className={CSS.link} href="/portfolio">
-                                <div>
-                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                    <rect className={CSS.shape} height="64" width="288" />
-                                    </svg>
-                                    <h2 className={CSS.h2}>Portfolio</h2>
-                                </div>
-                            </Link>
-                        </li>
-                        <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
-                            <Link className={CSS.link} href="/about-me">
-                                <div>
-                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                    <rect className={CSS.shape} height="64" width="288" />
-                                    </svg>
-                                    <h2 className={CSS.h2}>About Me</h2>
-                                </div>
-                            </Link>
-                        </li>
-                        <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
-                            <Link className={CSS.link} href="/contact">
-                                <div>
-                                    <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                    <rect className={CSS.shape} height="64" width="288" />
-                                    </svg>  
-                                    <h2 className={CSS.h2}>Contact</h2>
-                                </div>
-                            </Link>
-                        </li>
-                        {/* {bIsAuthenticated && <>
-                        <li className={CSS.svgWrapper}>
-                            <Link className={CSS.link} to="/admin/AdminDashboard" onClick={menuButtonHandler}>
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+    <nav className={CSS.nav}>
+        <div className={mobileMenuClasses}>
+            <ul className={menuInnerClasses}>
+                <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
+                    <Link href="/">
+                        <a className={CSS.link}>
+                            <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
                                 <rect className={CSS.shape} height="64" width="288" />
-                                </svg>  
-                                Admin Dashboard
-                            </Link>
-                        </li>
-                        <li className={CSS.svgWrapper}>
-                            <Link className={CSS.link} to="#" onClick={menuButtonHandler}>
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                            <h2 className={CSS.h2}>Home</h2>
+                        </a>
+                    </Link>
+                </li>
+                <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
+                    <Link href="/portfolio">
+                        <a className={CSS.link}>
+                            <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
                                 <rect className={CSS.shape} height="64" width="288" />
-                                </svg>  
-                                Blog
-                            </Link>
-                        </li>                          
-                        <li className={CSS.svgWrapper}>
-                            <Link className={CSS.link} to="#" onClick={logoutHandler}>
-                                <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
-                                <rect className={CSS.shape} height="64" width="288" />
-                                </svg>  
-                                Logout
-                            </Link>
-                        </li>
-                        </>} */}
-                    {/* </ul> */}
-                    {/* {bThemeChangeVisible&& 
-                        <button onClick={themeChangeHandler}>Theme</button>
-                    }
-                    {bSocialsVisible && 
-                    <ul className={CSS.socials}>
-                        <li><SocialLink type="twitch"/></li>
-                        <li><SocialLink type="twitter"/></li>
-                        <li><SocialLink type="youtube"/></li>
-                    </ul>
-                    } */}
-                </div>
-            </div>
-            <div className={CSS.mainNav}>
-                <Link className={CSS.logo} href="/" onClick={menuButtonHandler}>Curtis Bucciol</Link>
-                <BurgerMenu menuOpen={bMenuOpen} onClick={menuAction}/>
-            </div>
-       </nav>
+                            </svg>
+                            <h2 className={CSS.h2}>Portfolio</h2>
+                        </a>
+                    </Link>
+                </li>
+                <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
+                    <Link className={CSS.link} href="/about-me">
+                        <a className={CSS.link}>
+                            <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                            <rect className={CSS.shape} height="64" width="288" />
+                            </svg>
+                            <h2 className={CSS.h2}>About Me</h2>
+                        </a>
+                    </Link>
+                </li>
+                <li className={CSS.svgWrapper} onClick={menuButtonHandler}>
+                    <Link className={CSS.link} href="/contact">
+                        <a className={CSS.link}>
+                            <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                            <rect className={CSS.shape} height="64" width="288" />
+                            </svg>  
+                            <h2 className={CSS.h2}>Contact</h2>
+                        </a>
+                    </Link>
+                </li>
+                {/* {bIsAuthenticated && <>
+                <li className={CSS.svgWrapper}>
+                    <Link className={CSS.link} to="/admin/AdminDashboard" onClick={menuButtonHandler}>
+                        <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                        <rect className={CSS.shape} height="64" width="288" />
+                        </svg>  
+                        Admin Dashboard
+                    </Link>
+                </li>
+                <li className={CSS.svgWrapper}>
+                    <Link className={CSS.link} to="#" onClick={menuButtonHandler}>
+                        <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                        <rect className={CSS.shape} height="64" width="288" />
+                        </svg>  
+                        Blog
+                    </Link>
+                </li>                          
+                <li className={CSS.svgWrapper}>
+                    <Link className={CSS.link} to="#" onClick={logoutHandler}>
+                        <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                        <rect className={CSS.shape} height="64" width="288" />
+                        </svg>  
+                        Logout
+                    </Link>
+                </li>
+                </>} */}
+                {/* {bThemeChangeVisible&& 
+                    <button onClick={themeChangeHandler}>Theme</button>
+                }
+                {bSocialsVisible && 
+                <ul className={CSS.socials}>
+                    <li><SocialLink type="twitch"/></li>
+                    <li><SocialLink type="twitter"/></li>
+                    <li><SocialLink type="youtube"/></li>
+                </ul>
+                } */}
+            </ul>
+        </div>
+        <div className={CSS.mainNav}>
+            <Link href="/" onClick={menuButtonHandler}>
+                <a className={CSS.logo}>Curtis Bucciol</a>
+            </Link>
+            <BurgerMenu menuOpen={bMenuOpen} onClick={menuAction}/>
+        </div>
+    </nav>
 
 );}
 

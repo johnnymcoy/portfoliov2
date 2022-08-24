@@ -53,6 +53,7 @@ body{
     overflow: hidden;
     height: 100vh;
     // scrollbar-color: silver;
+    background: blue;
 }
 
 .wrapper{
@@ -63,7 +64,6 @@ body{
     height: 100%;
     z-index: -1;
     opacity: 1;
-    background: blue;
 }
 
 .wrapperBlur{
