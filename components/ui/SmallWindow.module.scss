@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .window{
     box-sizing: content-box;
     -webkit-font-smoothing: none;
@@ -11,14 +13,15 @@
     left: 200px;
     pointer-events: all;
     // margin: 32px;
-    width: 250px;
+    // width: 250px;
+    // max-height: 100%;
     z-index: 10;
 }
 
 .maximized{
     box-sizing: border-box;
     width: 100vw;
-    height: calc(100vh - 27px);
+    height: calc(100% - $WindowsTaskbarSize);
     top: 0;
     left: 0;
 }
@@ -82,16 +85,22 @@
     }
 }
 
+.closed{
+    display:none;
+}
+
 .cancelButton{
     margin-left: 6px;
 }
 
 .windowBody{
     margin: 8px;
+    min-height: 20px;
 }
 
 .fieldRow{
     justify-content: flex-end;
     align-items: center;
     display: flex;
+    bottom: 0;
 }

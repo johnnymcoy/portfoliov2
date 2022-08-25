@@ -1,6 +1,15 @@
 ## ideas and testing for new portfolio page
 
+https://www.sitepoint.com/css-typewriter-effect/
+
 todo: 
+    link a store of all the apps that can open
+    when double clicked on the icon can trigger app open
+
+    start button image is bugged
+    
+
+
     Control box - status bar images could be better
     create theme for the whole page with variables
     create dark theme version 

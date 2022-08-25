@@ -2,34 +2,45 @@
 
 // CSS Styles
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../windowsUI/Button";
 import Checkbox from "./Checkbox";
 import Dropdown from "./Dropdown";
 import Slider from "./Slider";
 import CSS from "./SmallWindow.module.scss"
 import Textbox from "./Textbox";
-function SmallWindow(){
+
+//props to pass down
+
+
+function SmallWindow(props){
     const [bMaximized, setbMaximized ] = useState(false);
+    const [bClosed, setbClosed ] = useState(false);
+
     function maximizeHandler(){
         setbMaximized(true);
     }
     function minimizeHandler(){
         setbMaximized(false);
     }
-    const windowClasses = bMaximized ? `${CSS.window} ${CSS.maximized}` : `${CSS.window}`
+    function closeHandler(){
+        setbClosed(true);
+    }
+    let windowClasses = bMaximized ? `${CSS.window} ${CSS.maximized}` : `${CSS.window}`
+    if(props.className){windowClasses += ` ${props.className}`}  
+    if(bClosed){ windowClasses += ` ${CSS.closed}` }
    return(
        <div className={windowClasses}>
            <div className={CSS.titleBar}>
-            <div className={CSS.titleBarText}>Program </div>
+            <div className={CSS.titleBarText}>{props.title}</div>
             <div className={CSS.titleBarControls}>
                 <Button className={`${CSS.button} ${CSS.minimize}`}></Button>
-                {!bMaximized && <Button className={`${CSS.button} ${CSS.maximize}`} onClick={maximizeHandler}></Button>}
+                {!bMaximized && <Button  className={`${CSS.button} ${CSS.maximize}`} onClick={maximizeHandler}></Button>}
                 {bMaximized && <Button className={`${CSS.button} ${CSS.restore}`} onClick={minimizeHandler}></Button>}
-                <Button className={`${CSS.button} ${CSS.close}`}></Button>
+                <Button className={`${CSS.button} ${CSS.close}`} onClick={closeHandler}></Button>
             </div>
            </div>
            <div className={CSS.windowBody}>
-            <p>Hello World</p>
+            {/* <p>Hello World</p>
             <Checkbox />
             <br />
             <Textbox/>
@@ -42,11 +53,11 @@ function SmallWindow(){
 
             <Slider  />
             <br />
-            <Dropdown />
-
+            <Dropdown /> */}
+            {props.children}
             <section className={CSS.fieldRow}>
-                <Button>OK</Button>
-                <Button className={CSS.cancelButton}>Cancel</Button>
+                <Button size="small">OK</Button>
+                <Button size="small" className={CSS.cancelButton}>Cancel</Button>
 
             </section>
            </div>

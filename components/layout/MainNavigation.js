@@ -1,9 +1,11 @@
 // Imports
 import Link from 'next/link'
 import CSS from "./MainNavigation.module.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { menuActions } from "../../store/mainStore";
+// import { menuActions } from "../../store/mainStore";
+import { menuActions } from "@store/mainStore";
+import Button from 'components/windowsUI/Button';
 
 
 
@@ -23,11 +25,14 @@ function BurgerMenu(props){
     </button>
 );}
 
+
 function MainNavigation(props){
     const dispatch = useDispatch();
     // const bIsAuthenticated = useSelector(state => state.auth.bIsAuthenticated);
     // const bSocialsVisible = useSelector(state => state.menu.bSocialsVisible);
-    const bThemeChangeVisible = useSelector(state => state.menu.bThemeChangeVisible);
+    const bIsDarkMode = useSelector(state => state.menu.bIsDarkMode);
+    // const bThemeChangeVisible = useSelector(state => state.menu.bThemeChangeVisible);
+    const bThemeChangeVisible = true;
 
     const bMenuOpen = props.menuOpen;
     const mobileMenuClasses = bMenuOpen ? `${CSS.mobileNav} ${CSS.mobileNavOpen}` : `${CSS.mobileNav}`;
@@ -43,6 +48,17 @@ function MainNavigation(props){
     function menuButtonHandler(){
         dispatch(menuActions.closeMenu());
     }
+    function themeChangeHandler(){
+        if(bIsDarkMode)
+        {
+            dispatch(menuActions.setLightMode());
+        }
+        else
+        {
+            dispatch(menuActions.setDarkMode());
+        }
+    }
+
 
    return(
     <nav className={CSS.nav}>
@@ -115,15 +131,24 @@ function MainNavigation(props){
                 </li>
                 </>} */}
                 {bThemeChangeVisible&& 
-                    <button onClick={themeChangeHandler}>Theme</button>
+                    <li className={CSS.svgWrapper}>
+                        <div className={CSS.link}>
+                            {/* <svg className={CSS.svg} height="64" width="288" xmlns="http://www.w3.org/2000/svg">
+                                <rect className={CSS.shape} height="64" width="288" />
+                            </svg>   */}
+
+                            <Button onClick={themeChangeHandler}>{bIsDarkMode ? "Dark" : "Light"} Theme</Button>
+
+                        </div>
+                    </li>
                 }
-                {bSocialsVisible && 
+                {/* {bSocialsVisible && 
                 <ul className={CSS.socials}>
                     <li><SocialLink type="twitch"/></li>
                     <li><SocialLink type="twitter"/></li>
                     <li><SocialLink type="youtube"/></li>
                 </ul>
-                }
+                } */}
             </ul>
         </div>
         <div className={CSS.mainNav}>

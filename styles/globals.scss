@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "variables.scss";
 
 * {
   box-sizing: border-box;
@@ -53,7 +54,8 @@ body{
     overflow: hidden;
     height: 100vh;
     // scrollbar-color: silver;
-    background: blue;
+    //todo temp bg for testing
+    background: $WindowsGreenColor;
 }
 
 .wrapper{

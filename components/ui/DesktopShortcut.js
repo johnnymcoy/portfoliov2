@@ -24,7 +24,9 @@ function DesktopShortcut(props){
             onClick={clickHandler} 
             onDoubleClick={doubleClickHandler}
         >
+            <div className={CSS.selectionOutline}></div>
             <div className={CSS.selectionEffect}></div>
+
             <div className={CSS.icon}>
                 <img src={props.icon} width="32" height="32"/>
             </div>

@@ -1,4 +1,5 @@
 // Imports
+import Calculator from "components/apps/Calculator";
 import { useState } from "react";
 import Desktop from "../../ui/Desktop";
 import SmallWindow from "../../ui/SmallWindow";
@@ -17,9 +18,10 @@ function ComputerScreenContent(){
 <div className={wrapperClasses} onClick={clickHandler}>
     {/* <div className={CSS.overlay}></div> */}
     <Desktop>
-        <SmallWindow>
+        <Calculator />
+        {/* <SmallWindow>
             Hello
-        </SmallWindow>
+        </SmallWindow> */}
     </Desktop>
     <Taskbar />
 </div>

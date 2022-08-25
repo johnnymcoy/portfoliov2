@@ -54,6 +54,7 @@ const shortcuts = [
 function Desktop(props){
     const [selected, setSelected] = useState();
     function clickHandler(){
+        console.log("click")
         setSelected();
     }
     function shortcutClicked(id){

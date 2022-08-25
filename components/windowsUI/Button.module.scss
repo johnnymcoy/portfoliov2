@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .button{
     text-rendering: auto;
     // color: buttontext;
@@ -33,6 +35,17 @@
     padding: 0 12px;
     appearance: auto;
     writing-mode: horizontal-tb !important;
+
+    // Modified with React UI 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.1s;
+
+
+
     // font-style: ;
     // font-variant-ligatures: ;
     // font-variant-caps: ;
@@ -50,6 +63,7 @@
     // min-width: 75px;
     // min-height: 23px;
     // padding: 0 12px;
+
     &:active{
         box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
         padding: 2px 11px 0 13px;
@@ -65,10 +79,57 @@
     &:disabled{
         text-shadow: 1px 1px 0 #fff;
         color: grey;
+        cursor: default;
+
         &:active{
             box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-            padding: 0;
+            // padding: 0;
     
         }
     }
 }
+
+
+.loading .text{
+    visibility: hidden;
+}
+.small{
+    // padding: 2px 4px;
+    padding: 0.1rem 0.2rem;
+    font-size: 11px;
+    &:active{
+        padding: 0.1rem 0.2rem;
+    }
+}
+
+.regular{
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    &:active{
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+.large{
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    &:active{
+        padding: 0.6rem 1.2rem;
+    }
+}
+.extraLarge{
+    font-size: 2rem;
+    padding: 0.75rem 1.5rem;
+    &:active{
+        padding: 0.75rem 1.5rem;
+
+    }
+}
+
+.default{
+    color: $WindowsFontColor;
+    // color: $FontColor;
+    // background-color: var(--blue3);
+}
+
+

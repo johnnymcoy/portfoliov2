@@ -3,6 +3,7 @@ import {createSlice} from "@reduxjs/toolkit"
 const initialMenuState = {
     bIsMenuOpen: false,
     //Get from Web
+    bIsDarkMode: false,
     bSocialsVisible: false,
     bThemeChangeVisible: false,
 };
@@ -19,6 +20,12 @@ const menuSlice = createSlice({
         },
         closeMenu(state){
             state.bIsMenuOpen = false;
+        },
+        setDarkMode(state){
+            state.bIsDarkMode = true;
+        },
+        setLightMode(state){
+            state.bIsDarkMode = false;
         },
         toggleShowSocials(state){
             state.bSocialsVisible = !state.bSocialsVisible;

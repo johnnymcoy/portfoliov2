@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
-import Button from "../components/ui/Button";
+import Button from "../components/windowsUI/Button";
 import Card from "../components/ui/Card";
 import Desktop from "../components/ui/Desktop";
 import SmallWindow from "../components/ui/SmallWindow";
@@ -18,6 +18,8 @@ import DeskLamp from "../components/3d/deskItems/DeskLamp";
 
 import MainNavigation from "../components/layout/MainNavigation";
 import {useSelector} from "react-redux";
+import Textbox from "components/ui/Textbox";
+import ComputerScreenContent from "components/3d/computer/ComputerScreenContent";
 
 
 
@@ -78,8 +80,10 @@ function index(){
 
    return(
     <div className={CSS.body}>
-        <MainNavigation menuOpen={bIsMenuOpen} />
+        {/* <MainNavigation menuOpen={bIsMenuOpen} /> */}
         <div className={bgBlurClass}></div>
+        <ComputerScreenContent />
+
         {/* <Canvas className={CSS.canvas} shadows
             camera={{fov: 55, position: [0,0,4]}}>
                 <OrbitControls />

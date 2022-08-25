@@ -1,7 +1,7 @@
 // Imports
 
 // CSS Styles
-import Button from "./Button";
+import Button from "../windowsUI/Button";
 import CSS from "./Taskbar.module.scss"
 
 function Taskbar(){

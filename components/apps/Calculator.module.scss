@@ -1,0 +1,70 @@
+@import "../../styles/variables.scss";
+
+.calculator{
+    // padding: 2rem;
+    // background: var(--orange-color);
+    /* border: 8px red solid; */
+    width: 400px;
+    top: 0vh;
+    position: relative;
+    // margin: 2rem auto ;
+}
+
+.calculator h1{
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.calculatorDark h1{
+    color: var(--beige-color);
+}
+
+
+.display{
+    font-size: 2rem;
+    padding:2rem;
+    background: $WindowsGreyColor;
+    color: $WindowsFontColor;
+}
+
+.buttons{
+    padding-top: 1rem;
+}
+
+
+.digits{
+    display: inline-block;
+    width: 60%;
+}
+
+.digits button:last-child{
+    width: 66.67%;
+}
+
+
+.operators{
+    width: 40%;
+    display: inline-block;
+}
+.operators button:last-child{
+    width: 100%;
+}
+
+.button{
+    font-size: 2rem;
+    text-transform: uppercase;
+    // border: 0.25rem $WindowsGreenColor solid;
+    padding: 1rem;
+    width: 4.8rem;
+    color: $WindowsFontColor;
+    background: $WindowsGreenColor;
+}
+
+.button:hover{
+    background: $WindowsGreenColor;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+
+}
