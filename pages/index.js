@@ -79,9 +79,8 @@ function index(){
    return(
     <div className={CSS.body}>
         <MainNavigation menuOpen={bIsMenuOpen} />
-        <div className={bgBlurClass}>
-        </div>
-        <Canvas className={CSS.canvas} shadows
+        <div className={bgBlurClass}></div>
+        {/* <Canvas className={CSS.canvas} shadows
             camera={{fov: 55, position: [0,0,4]}}>
                 <OrbitControls />
                 <Suspense fallback={null}>
@@ -91,7 +90,7 @@ function index(){
                 <primitive object={directionalLight} />
                 <primitive object={ambientLight} />
                 <primitive object={directionalLightHelper} />
-        </Canvas>
+        </Canvas> */}
     </div>
 );}
 

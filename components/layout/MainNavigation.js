@@ -27,7 +27,7 @@ function MainNavigation(props){
     const dispatch = useDispatch();
     // const bIsAuthenticated = useSelector(state => state.auth.bIsAuthenticated);
     // const bSocialsVisible = useSelector(state => state.menu.bSocialsVisible);
-    // const bThemeChangeVisible = useSelector(state => state.menu.bThemeChangeVisible);
+    const bThemeChangeVisible = useSelector(state => state.menu.bThemeChangeVisible);
 
     const bMenuOpen = props.menuOpen;
     const mobileMenuClasses = bMenuOpen ? `${CSS.mobileNav} ${CSS.mobileNavOpen}` : `${CSS.mobileNav}`;
@@ -114,7 +114,7 @@ function MainNavigation(props){
                     </Link>
                 </li>
                 </>} */}
-                {/* {bThemeChangeVisible&& 
+                {bThemeChangeVisible&& 
                     <button onClick={themeChangeHandler}>Theme</button>
                 }
                 {bSocialsVisible && 
@@ -123,7 +123,7 @@ function MainNavigation(props){
                     <li><SocialLink type="twitter"/></li>
                     <li><SocialLink type="youtube"/></li>
                 </ul>
-                } */}
+                }
             </ul>
         </div>
         <div className={CSS.mainNav}>
