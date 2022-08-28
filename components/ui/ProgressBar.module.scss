@@ -1,0 +1,19 @@
+.svg {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+}
+
+.svgCircleBg {
+    fill: none;
+}
+
+.svgCircle {
+    fill: none;
+}
+.svgCircleText {
+    font-size: 0.75rem;
+    text-anchor: middle;
+    fill: var(--darkblue-color);
+    font-weight: bold;
+}
