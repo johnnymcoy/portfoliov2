@@ -89,10 +89,14 @@
     }
 }
 
+.text{
+    display: flex;
+}
 
 .loading .text{
     visibility: hidden;
 }
+
 .small{
     // padding: 2px 4px;
     padding: 0.1rem 0.2rem;

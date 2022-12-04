@@ -43,6 +43,7 @@ function Button({loading, children, status, size, className, ...props}){
     return(
 <button className={classes} onClick={clickHandler} {...props}>
     {loading && <LoadingSpinner />}
+    {/* {children} */}
     <span className={CSS.text}>{children}</span>
 </button>
 
