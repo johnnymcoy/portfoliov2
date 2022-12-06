@@ -24,6 +24,7 @@
     height: calc(100% - $WindowsTaskbarSize);
     top: 0;
     left: 0;
+
 }
 
 .titleBar{
@@ -86,9 +87,18 @@
     }
 }
 
+.minimized{
+    transition: 0.2s ease;
+    // transform: translateY(75%) translateX(-75%) scaleY(0);
+    transform: translateY(450px) scaleY(0);
+    &.maximized{
+        width: 50%;
+        height: 50%;
+    }
+}
+
 .closed{
-    transition: 0.1s ease;
-    transform: translateY(75%) translateX(-75%) scaleY(0);
+    display: none;
 }
 
 .cancelButton{

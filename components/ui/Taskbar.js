@@ -1,12 +1,11 @@
 // Imports
 
-// CSS Styles
 import Button from "../windowsUI/Button";
+// CSS Styles
 import CSS from "./Taskbar.module.scss"
 
 function Taskbar(){
     let options = {
-        
         hour: "numeric",
         minute: "numeric",
         // second: "numeric",

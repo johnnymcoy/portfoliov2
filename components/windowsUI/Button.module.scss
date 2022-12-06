@@ -89,6 +89,9 @@
     }
 }
 
+.text{
+    display: flex;
+}
 
 .loading .text{
     visibility: hidden;
@@ -100,8 +103,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-
 }
 .small{
     // padding: 2px 4px;

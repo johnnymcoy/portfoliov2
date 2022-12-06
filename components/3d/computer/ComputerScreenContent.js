@@ -21,13 +21,13 @@ function ComputerScreenContent(){
 <div className={wrapperClasses} onClick={clickHandler}>
     {/* <div className={CSS.overlay}></div> */}
     <Desktop>
-        <CountDownTimer />
+        {/* <CountDownTimer />
         <Calculator />
-        {/* <Notes /> */}
-        {/* <TodoList /> */}
-        {/* <SmallWindow>
+        <Notes />
+        <TodoList /> */}
+        <SmallWindow title={"Title"}>
             Hello
-        </SmallWindow> */}
+        </SmallWindow>
     </Desktop>
     <Taskbar />
 </div>

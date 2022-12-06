@@ -80,8 +80,11 @@ function index(){
 
    return(
     <div className={CSS.body}>
-        <MainNavigation menuOpen={bIsMenuOpen} />
-        <div className={bgBlurClass}></div>
+        {/* Navigation + Navigation background */}
+        {/* <MainNavigation menuOpen={bIsMenuOpen} />
+        <div className={bgBlurClass}></div> */}
+
+
         <ComputerScreenContent />
 
         {/* <Canvas className={CSS.canvas} shadows
