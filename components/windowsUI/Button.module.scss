@@ -93,6 +93,16 @@
 .loading .text{
     visibility: hidden;
 }
+
+.text{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
 .small{
     // padding: 2px 4px;
     padding: 0.1rem 0.2rem;

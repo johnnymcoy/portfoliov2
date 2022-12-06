@@ -4,10 +4,11 @@ import "../public/static/clippy/build/clippy.css";
 import Script from "next/script";
 import Head from 'next/head'
 
-import {Provider} from "react-redux";
+import {Provider, useSelector} from "react-redux";
 import store from "@store/store";
 
 function MyApp({ Component, pageProps }) {
+    // const bIsMenuOpen = useSelector(state => state.menu.bIsMenuOpen);
 
   return (
     <Provider store={store}>
@@ -23,8 +24,10 @@ function MyApp({ Component, pageProps }) {
                 clippy.load('Clippy', run);
         }}/> */}
     {/* </Head> */}
-    {/* <MainNavigation menuOpen={bIsMenuOpen} />  */}
-    {/* <div className={bgBlurClass}> */}
+    {/* <MainNavigation menuOpen={bIsMenuOpen} /> 
+    <div className={bgBlurClass}> */}
+    {/* <MainNavigation menuOpen={bIsMenuOpen} /> */}
+
     <Component {...pageProps}/>
     {/* </div> */}
     </Provider>

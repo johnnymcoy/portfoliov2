@@ -20,7 +20,7 @@
 
 .maximized{
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     height: calc(100% - $WindowsTaskbarSize);
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@
     display: flex;
     
     .button{
-        display: block;
+        // display: block;
         min-height: 14px;
         min-width: 16px;
         padding: 0;

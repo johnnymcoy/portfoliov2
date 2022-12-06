@@ -80,7 +80,7 @@ function index(){
 
    return(
     <div className={CSS.body}>
-        {/* <MainNavigation menuOpen={bIsMenuOpen} /> */}
+        <MainNavigation menuOpen={bIsMenuOpen} />
         <div className={bgBlurClass}></div>
         <ComputerScreenContent />
 

@@ -212,7 +212,7 @@ function Calculator(props){
     
 
    return(
-<SmallWindow title="Bucci Calculator" className={CSS.calculator}>
+<SmallWindow title="Bucci Calculator" className={CSS.calculator} bCanBeMaximized="false" >
     <h1>Hello</h1>
     {devInfo}
     <div className={CSS.display}>

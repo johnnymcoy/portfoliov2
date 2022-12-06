@@ -23,8 +23,8 @@ function ComputerScreenContent(){
     <Desktop>
         <CountDownTimer />
         <Calculator />
-        <Notes />
-        <TodoList />
+        {/* <Notes /> */}
+        {/* <TodoList /> */}
         {/* <SmallWindow>
             Hello
         </SmallWindow> */}

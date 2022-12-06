@@ -1,0 +1,57 @@
+@import "@styles/variables.scss";
+//todo: colors, sizes add into variables
+
+// :root
+// {
+//     --border-radius: 10%;
+//     --icon-size: 1rem;
+// }
+
+.socialMediaIcon
+{
+    height: inherit;
+    width: inherit;
+    border-radius: 10%;
+    fill: $FontColor;
+}
+
+.socialMediaIconDark
+{
+    height: inherit;
+    width: inherit;
+    border-radius: 10%;
+    fill: $FontSecondary;
+
+}
+
+.socialMediaIcon:hover{
+    transition-duration: 0.4s;
+}
+
+.youtube:hover{
+    fill: $WindowsRedColor;
+}
+
+.twitter:hover{
+    filter: brightness(2);
+    fill: $WindowsBlueColor;
+}
+
+.twitch:hover{
+    fill: $PurpleColor;
+}
+
+
+
+.link
+{
+    height: $SocialLinkSize;
+    width: $SocialLinkSize;
+    display:inline-block;
+    margin: 0 1rem;
+    background-size: 95%;
+    border-radius: 10%;
+    /* background-color: black; */
+
+
+}

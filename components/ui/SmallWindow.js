@@ -1,6 +1,3 @@
-// Imports
-
-// CSS Styles
 import { useState } from "react";
 import Button from "../windowsUI/Button";
 import Checkbox from "./Checkbox";
@@ -10,12 +7,37 @@ import CSS from "./SmallWindow.module.scss"
 import Textbox from "./Textbox";
 
 //props to pass down
+// bCanBeMaximized
 
 
 function SmallWindow(props){
+    const bCanBeMaximized = props.bCanBeMaximized;
     const [bMaximized, setbMaximized ] = useState(false);
     const [bClosed, setbClosed ] = useState(false);
+    
+    function StatusButtons(){
+        let MaximizeButton = 
+        (<>
+            {!bMaximized && <Button  className={`${CSS.button} ${CSS.maximize}`} onClick={maximizeHandler}></Button>}
+            {bMaximized && <Button className={`${CSS.button} ${CSS.restore}`} onClick={minimizeHandler}></Button>}
+        </>)
+        if(bCanBeMaximized)
+        {
+            MaximizeButton = <></>
+        }
+        return(
+            <div className={CSS.titleBarControls}>
+                <Button className={`${CSS.button} ${CSS.minimize}`}></Button>
+                {MaximizeButton}
+                <Button className={`${CSS.button} ${CSS.close}`} onClick={closeHandler}></Button>
+            </div>
+        );
+    }
 
+    if(bCanBeMaximized)
+    {
+
+    }
     function maximizeHandler(){
         setbMaximized(true);
     }
@@ -30,16 +52,11 @@ function SmallWindow(props){
     if(bClosed){ windowClasses += ` ${CSS.closed}` }
    return(
        <div className={windowClasses}>
-           <div className={CSS.titleBar}>
-            <div className={CSS.titleBarText}>{props.title}</div>
-            <div className={CSS.titleBarControls}>
-                <Button className={`${CSS.button} ${CSS.minimize}`}></Button>
-                {!bMaximized && <Button  className={`${CSS.button} ${CSS.maximize}`} onClick={maximizeHandler}></Button>}
-                {bMaximized && <Button className={`${CSS.button} ${CSS.restore}`} onClick={minimizeHandler}></Button>}
-                <Button className={`${CSS.button} ${CSS.close}`} onClick={closeHandler}></Button>
+            <div className={CSS.titleBar}>
+                <div className={CSS.titleBarText}>{props.title}</div>
+                <StatusButtons />
             </div>
-           </div>
-           <div className={CSS.windowBody}>
+            <div className={CSS.windowBody}>
             {/* <p>Hello World</p>
             <Checkbox />
             <br />

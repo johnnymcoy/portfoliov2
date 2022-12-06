@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { menuActions } from "../../store/mainStore";
 import { menuActions } from "@store/mainStore";
 import Button from 'components/windowsUI/Button';
-
+import SocialLink from "./SocialLink"
 
 
 function BurgerMenu(props){
@@ -142,13 +142,16 @@ function MainNavigation(props){
                         </div>
                     </li>
                 }
-                {/* {bSocialsVisible && 
-                <ul className={CSS.socials}>
-                    <li><SocialLink type="twitch"/></li>
+                {/* {bSocialsVisible &&  */}
+                {/* <ul className={CSS.socials}>
+                    <li><Button>
+                           <SocialLink type="twitch"/>
+                        </Button>
+                        </li>
                     <li><SocialLink type="twitter"/></li>
                     <li><SocialLink type="youtube"/></li>
-                </ul>
-                } */}
+                </ul> */}
+                {/* } */}
             </ul>
         </div>
         <div className={CSS.mainNav}>
