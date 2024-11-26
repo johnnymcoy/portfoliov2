@@ -3,14 +3,18 @@ import React, { Suspense, useEffect,useMemo,useRef,useState } from 'react';
 import * as THREE from 'three'
 
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
-import { useLoader } from '@react-three/fiber'
+import { useFrame, useLoader } from '@react-three/fiber'
 import {  useGLTF } from '@react-three/drei'
 import Desktop from '../../ui/Desktop';
 import SmallWindow from '../../ui/SmallWindow';
 import Taskbar from '../../ui/Taskbar';
 import { OrbitControls, useTexture, Html, Box, Effects } from '@react-three/drei'
-import TestBox from './testBox';
+// import TestBox from './testBox';
 import ComputerScreen from '../computer/ComputerScreen';
+import Stats from "stats-js"
+import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
+import FloppyDisk from '../computer/FloppyDisk';
+
 
 const Monitor = React.forwardRef((props, ref) => {
     const material = new THREE.MeshStandardMaterial();
@@ -20,6 +24,14 @@ const Monitor = React.forwardRef((props, ref) => {
     const [textTexture]= useTexture(["static/3d/textures/matcaps/2.png"]);
     const textMaterial = new THREE.MeshMatcapMaterial({matcap: textTexture});
     // const meshRef = useRef();
+
+    const stats = new Stats();
+    stats.showPanel( 0 ); 
+    document.body.appendChild( stats.dom );
+    useFrame(() => {
+        stats.update();
+    })
+    // stats.
 
     const {nodes, materials} = useGLTF("/static/3d/ComputerNoScreen.gltf");
     return(
@@ -278,49 +290,50 @@ function FloppyDrive(){
 
 
 function ComputerMonitor3d(){
-    // function HtmlBox() {
-    //     const [hidden, setVisible] = useState(false)
-    //     const [loading, setIsLoading] = useState(false)
-    //     const boxRef = useRef();
+
+    function HtmlBox() {
+        const [hidden, setVisible] = useState(false)
+        const [loading, setIsLoading] = useState(false)
+        const boxRef = useRef();
     
-    //     function buttonHandler(){
-    //         setIsLoading(prev => !prev)
-    //     }
-    //     return (
-    //       <mesh scale={[0.1,0.1,0.1]} ref={boxRef} position={[0,0,0]}
-    //         //keep the mesh Relative size to the viewport
-    //         //   scale={(viewport.width / 10) * size}
-    //         >
-    //         {/* <boxGeometry  args={[35,30,25]} /> */}
-    //         <meshStandardMaterial />
-    //         <Html
-    //           style={{
-    //             transition: 'all 0.2s',
-    //             height:"100vh",
-    //             width: "100vw",
-    //             textAlign: "center",
-    //             alignItems: "center",
-    //             opacity: hidden ? 0 : 1,
-    //             transform: `scale(${hidden ? 0.5 : 1})`
-    //           }}
-    //           center
-    //           position={[0, 0, 10]}
-    //           transform
-    //           occlude={[meshRef]}
-    //         //   onOcclude={setVisible}
-    //         >
-    //     <div className={CSS.body}>
-    //         <Desktop>
-    //             <SmallWindow>
-    //                 Hello
-    //             </SmallWindow>
-    //         </Desktop>
-    //         <Taskbar />
-    //     </div>
-    //         </Html>
-    //       </mesh>
-    //     )
-    // }
+        function buttonHandler(){
+            setIsLoading(prev => !prev)
+        }
+        return (
+          <mesh scale={[0.1,0.1,0.1]} ref={boxRef} position={[0,0,0]}
+            //keep the mesh Relative size to the viewport
+            //   scale={(viewport.width / 10) * size}
+            >
+            {/* <boxGeometry  args={[35,30,25]} /> */}
+            <meshStandardMaterial />
+            <Html
+              style={{
+                transition: 'all 0.2s',
+                height:"100vh",
+                width: "100vw",
+                textAlign: "center",
+                alignItems: "center",
+                opacity: hidden ? 0 : 1,
+                transform: `scale(${hidden ? 0.5 : 1})`
+              }}
+              center
+              position={[0, 0, 10]}
+              transform
+              occlude={[meshRef]}
+            //   onOcclude={setVisible}
+            >
+        <div className={CSS.body}>
+            <Desktop>
+                <SmallWindow>
+                    Hello
+                </SmallWindow>
+            </Desktop>
+            <Taskbar />
+        </div>
+            </Html>
+          </mesh>
+        )
+    }
     const floor = new THREE.Mesh(
         new THREE.PlaneGeometry(10, 10),
         new THREE.MeshStandardMaterial({
@@ -342,12 +355,59 @@ function ComputerMonitor3d(){
     const floppyDrive = useLoader(GLTFLoader, "/static/3d/AppleComputerFloppyDrive.gltf");
     const mouse = useLoader(GLTFLoader, "/static/3d/AppleComputerMouse.gltf");
     const meshRef = useRef();
-    // console.log(meshRef)
     
     const {nodes, materials} = useGLTF("/static/3d/ComputerNoScreen.gltf");
     //     <primitive object={monitor.scene}>
     // </primitive>
-        console.log(nodes)
+
+    function CreateCssPlane(element) {
+        // Create CSS3D object
+        const object = new CSS3DObject(element);
+
+        // copy monitor position and rotation
+        object.position.copy(this.position);
+        object.rotation.copy(this.rotation);
+
+        // Add to CSS scene
+        cssScene.add(object);
+
+        // Create GL plane
+        const material = new THREE.MeshLambertMaterial();
+        material.side = THREE.DoubleSide;
+        material.opacity = 0;
+        material.transparent = true;
+        // NoBlending allows the GL plane to occlude the CSS plane
+        material.blending = THREE.NoBlending;
+
+        // Create plane geometry
+        const geometry = new THREE.PlaneGeometry(
+            screenSize.width,
+            screenSize.height
+        );
+
+        // Create the GL plane mesh
+        const mesh = new THREE.Mesh(geometry, material);
+
+        // Copy the position, rotation and scale of the CSS plane to the GL plane
+        mesh.position.copy(object.position);
+        mesh.rotation.copy(object.rotation);
+        mesh.scale.copy(object.scale);
+
+        // Add to gl scene
+        scene.add(mesh);
+    }
+    
+    // const overlay = new THREE.Mesh(
+    //     new THREE.PlaneGeometry(10000, 10000),
+    //     new THREE.ShaderMaterial({
+    //         // vertexShader: screenVert,
+    //         // fragmentShader: screenFrag,
+    //         uniforms: this.uniforms,
+    //         depthTest: false,
+    //         depthWrite: false,
+    //     })
+    // );
+
    return(
     <>
         {/* <HtmlBox>
@@ -359,6 +419,7 @@ function ComputerMonitor3d(){
             <ComputerScreen meshref={meshRef} />
         </Suspense>
         <Keyboard />
+        <FloppyDisk />
         <Mouse />
         <FloppyDrive />
       {/* <group position={[0,0,0]} scale={[1,1,1]} rotation={[0,(Math.PI * -0.5),0]} ref={meshRef}>

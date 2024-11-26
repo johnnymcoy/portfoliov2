@@ -20,6 +20,7 @@ import MainNavigation from "../components/layout/MainNavigation";
 import {useSelector} from "react-redux";
 import Textbox from "components/ui/Textbox";
 import ComputerScreenContent from "components/3d/computer/ComputerScreenContent";
+import SectionSelection from "components/layout/SectionSelection";
 
 
 
@@ -81,13 +82,13 @@ function index(){
    return(
     <div className={CSS.body}>
         {/* Navigation + Navigation background */}
-        {/* <MainNavigation menuOpen={bIsMenuOpen} />
-        <div className={bgBlurClass}></div> */}
+        <MainNavigation menuOpen={bIsMenuOpen} />
+        <div className={bgBlurClass}></div>
 
+        {/* <ComputerScreenContent /> */}
 
-        <ComputerScreenContent />
-
-        {/* <Canvas className={CSS.canvas} shadows
+        {/* <iframe src="https://www.buccigames.com"/> */}
+        <Canvas className={CSS.canvas} shadows
             camera={{fov: 55, position: [0,0,4]}}>
                 <OrbitControls />
                 <Suspense fallback={null}>
@@ -97,7 +98,9 @@ function index(){
                 <primitive object={directionalLight} />
                 <primitive object={ambientLight} />
                 <primitive object={directionalLightHelper} />
-        </Canvas> */}
+        </Canvas>
+        <SectionSelection />
+
     </div>
 );}
 

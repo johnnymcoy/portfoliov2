@@ -19,19 +19,22 @@ function ComputerScreenContent(){
     }
    return(
 <div className={wrapperClasses} onClick={clickHandler}>
-    {/* <div className={CSS.overlay}></div> */}
+    <button className={CSS.popout}>Focus on screen</button>
+    <iframe src="https://www.buccigames.com" style={{width: "100%", height: "100%"}}/>
+    {/* <div className={CSS.overlay}></div>
     <Desktop>
-        {/* <CountDownTimer />
-        <Calculator />
-        <Notes />
-        <TodoList /> */}
         <SmallWindow title={"Title"}>
             Hello
         </SmallWindow>
     </Desktop>
-    <Taskbar />
+    <Taskbar /> */}
 </div>
 
 );}
 
 export default ComputerScreenContent;
+
+        // {/* <CountDownTimer />
+        // <Calculator />
+        // <Notes />
+        // <TodoList /> */}
